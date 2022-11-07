@@ -8,15 +8,16 @@
 # OR
 # Example: Python3 Network_scanner.py --range 129.186.0.1/24.
 
+from xml.dom.xmlbuilder import Options
 import scapy.all as scapy            # This is a Library that helps with Packet Manipulations for Computer Networks.
-import optparse                      # This is a Library that helps us to handle user Input from CLI (Command Line Interface).
+import argparse                      # This is a Library that helps us to handle user Input from CLI (Command Line Interface).
 from datetime import date, datetime  # This Library helps us work with and Date and Time.
 
 # Function to get user arguments from CLI
 def get_user_parameters():
-    parser = optparse.OptionParser()
-    parser.add_option("-r", "--range", dest="ip", help="Specify IP range to scan. Use --help for more info.")
-    (options, arguments) = parser.parse_args()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-r", "--range", dest="ip", help="Specify IP range to scan. Use --help for more info.")
+    (options) = parser.parse_args()
     if not options.ip:
         parser.error("IP range not specified.")
     return options
