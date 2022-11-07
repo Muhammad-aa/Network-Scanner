@@ -8,7 +8,6 @@
 # OR
 # Example: Python3 Network_scanner.py --range 129.186.0.1/24.
 
-from xml.dom.xmlbuilder import Options
 import scapy.all as scapy            # This is a Library that helps with Packet Manipulations for Computer Networks.
 import argparse                      # This is a Library that helps us to handle user Input from CLI (Command Line Interface).
 from datetime import date, datetime  # This Library helps us work with and Date and Time.
